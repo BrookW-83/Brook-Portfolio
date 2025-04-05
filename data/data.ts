@@ -1,10 +1,11 @@
 export const Hero = {
   pTag: "Hi, My name is",
   hTag: "Nathnael Teshome",
-  hTag2: "I am a Full-Stack Developer",
+  hTag2: "I make websites that go brr.",
   pTag2:
     "I am a software engineer with a passion for building web applications. I have experience in JavaScript, React, and Node.js.I am currently working at a startup where I am responsible for building and maintaining the company's web applications. I am also involved in the design and development of new features.In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends. In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends.",
   heroImage: "/images/hero.png",
+  button: "Get In Touch",
 };
 
 export const About = {
@@ -47,12 +48,23 @@ export const Skills = [
   },
 ];
 
-export const Experience = [
+export const ExperienceSection = {
+  hTag: "Where I've Worked",
+};
+
+export const ExperienceData = [
   {
     id: 1,
-    title: "Software Engineer",
+    title: "Lead Engineer",
     company: "Tech Company",
     date: "Jan 2022 - Present",
+    bulletPoints: [
+      "Developed and maintained web applications using React and Node.js.",
+      "Collaborated with cross-functional teams to design and implement new features.",
+      "Participated in code reviews and provided feedback to other developers.",
+      "Worked with product managers to understand user requirements and translate them into technical specifications.",
+      "Mentored junior developers and provided guidance on best practices.",
+    ],
     description:
       "I am a software engineer with a passion for building web applications. I have experience in JavaScript, React, and Node.js.I am currently working at a startup where I am responsible for building and maintaining the company's web applications. I am also involved in the design and development of new features.",
   },
@@ -61,8 +73,37 @@ export const Experience = [
     title: "Intern Software Engineer",
     company: "Tech Company",
     date: "Jan 2021 - Dec 2021",
+    bulletPoints: [
+      "Worked with product managers to understand user requirements and translate them into technical specifications.",
+      "Developed and maintained web applications using React and Node.js.",
+      "Collaborated with cross-functional teams to design and implement new features.",
+      "Participated in code reviews and provided feedback to other developers.",
+      "Worked with product managers to understand user requirements and translate them into technical specifications.",
+      "Mentored junior developers and provided guidance on best practices.",
+    ],
     description:
       "I am a software engineer with a passion for building web applications. I have experience in JavaScript, React, and Node.js.I am currently working at a startup where I am responsible for building and maintaining the company's web applications. I am also involved in the design and development of new features.",
+  },
+  {
+    id: 3,
+    title: "Software Engineer",
+    company: "Minnovation",
+    date: "Jan 2020 - Dec 2020",
+    bulletPoints: [
+      " I collaborated with engineers, scientists, and product teams to develop and refine innovative solutions.",
+      "My contributions included designing and optimizing machine learning models, to enhance their accuracy, efficiency, and scalability",
+    ],
+  },
+  {
+    id: 4,
+    title: "Software Engineer",
+    company: "Ethiopian Airlines",
+    date: "Jan 2020 - Dec 2020",
+    bulletPoints: [
+      "Collaborated with the Design Engineering team to collect, process, and analyze operational data",
+      "Worked on basic scripting to visualize performance metrics, aiding data-driven decision-making",
+      "Documented technical findings and created structured reports for ongoing research and improvement initiatives.",
+    ],
   },
 ];
 
