@@ -16,7 +16,7 @@ const Experience = () => {
         <div className="flex flex-col md:flex-row">
           {/* Left side - company list */}
           <div className="relative w-full md:w-1/4  mb-8 md:mb-0">
-            <div className="flex md:flex-col overflow-x-auto md:overflow-x-clip scrollable">
+            <div className="flex md:flex-col overflow-x-auto no-scrollbar">
               {ExperienceData.map((exp) => (
                 <button
                   key={exp.id}

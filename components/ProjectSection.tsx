@@ -23,11 +23,12 @@ export default function ProjectSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className={`relative flex flex-col  lg:flex-row ${
+              className={`relative flex flex-col bg-amber-300  lg:flex-row ${
                 index % 2 !== 0 ? "lg:flex-row-reverse" : ""
               } gap-y-8`}
             >
               {/* image section */}
+
               <div className="overflow-hidden min-h-92 lg:w-1/2 relative z-0 ">
                 <div className="overflow-hidden rounded-lg shadow-xl">
                   <Image
@@ -54,11 +55,22 @@ export default function ProjectSection() {
                 </h3>
                 <div className="relative lg:w-full lg:h-48 ">
                   <div
-                    className={`absolute  -mt-32 lg:mt-0 top-1/2 -translate-y-1/2 ${
+                    className={`absolute  -mt-24 lg:mt-0  lg:top-1/2 -translate-y-1/2 ${
                       index % 2 !== 0 ? "lg:left-0" : "right-0"
-                    } bg-gray-900 text-[#ccd6f6]  border border-slate-200/10 p-5 text-sm shadow-md lg:w-[120%]`}
+                    } bg-background/80 max-h-32 overflow-clip lg:max-h-40 text-[#ccd6f6]  border border-slate-200/10 p-5 text-sm shadow-md lg:w-[120%]`}
                   >
-                    {project.description}
+                    <div className="hidden lg:block">{project.description}</div>
+                    <div className="block lg:hidden">
+                      {(() => {
+                        if (project.description.length <= 200)
+                          return project.description;
+                        const truncated = project.description.slice(0, 200);
+                        const lastSpace = truncated.lastIndexOf(" ");
+                        return lastSpace > 0
+                          ? truncated.slice(0, lastSpace) + "..."
+                          : truncated + "...";
+                      })()}
+                    </div>
                   </div>
                 </div>
                 <ul className="flex flex-wrap justify-end gap-4 text-xs text-[#8892b0] font-mono mb-4">

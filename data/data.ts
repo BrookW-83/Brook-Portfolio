@@ -1,3 +1,5 @@
+import { section } from "framer-motion/client";
+
 export const Hero = {
   pTag: "Hi, My name is",
   hTag: "Nathnael Teshome",
@@ -13,6 +15,7 @@ export const About = {
   h1Tag: "Hi, I am Nathnael Teshome",
   pTag2:
     "I am a software engineer with a passion for building web applications. I have experience in JavaScript, React, and Node.js.I am currently working at a startup where I am responsible for building and maintaining the company's web applications. I am also involved in the design and development of new features.In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends. In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends.",
+  animatedImg: "/animatedcoder4.svg",
 };
 
 export const Skills = [
@@ -107,23 +110,35 @@ export const ExperienceData = [
   },
 ];
 
-export const Projects = [
+export const ProjectSectionData = {
+  sectionId: "03.",
+  hTag: "My Projects",
+};
+
+export const menuItems = [
+  { name: "Home", href: "#" },
+  { name: "About", href: "#" },
+  { name: "Projects", href: "#" },
+  { name: "Contacts", href: "#" },
+];
+
+export const projects = [
   {
-    name: "RateEat",
-    tag: "Featured Project",
+    name: "rateeat",
+    tag: "featured project",
     description:
-      "RateEat is a web application that allows users to rate and review restaurants. It is built with React, Node.js, and MongoDB. The application has a user-friendly interface and allows users to search for restaurants by location, cuisine, and rating. Users can also create an account to save their favorite restaurants and reviews.",
-    imageUrl: "/images/projects/rateeat.png",
+      "rateeat is a web application that allows users to rate and review restaurants. it is built with react, node.js, and mongodb. the application has a user-friendly interface and allows users to search for restaurants by location, cuisine, and rating. users can also create an account to save their favorite restaurants and reviews.",
+    imageurl: "/images/rateeat.png",
     technologies: ["python", "flask", "mongodb"],
     github: "http://github.com/rateeat",
     url: "http://rateeat.com",
   },
   {
-    name: "RideShare",
-    tag: "Featured Project",
+    name: "rideshare",
+    tag: "featured project",
     description:
-      "RideShare is a web application that allows users to find and book rides with other users. It is built with React, Node.js, and MongoDB. The application has a user-friendly interface and allows users to search for rides by location, date, and time. Users can also create an account to save their favorite rides and drivers.",
-    imageUrl: "/images/projects/rideshare.png",
+      "rideshare is a web application that allows users to find and book rides with other users. it is built with react, node.js, and mongodb. the application has a user-friendly interface and allows users to search for rides by location, date, and time. users can also create an account to save their favorite rides and drivers.",
+    imageurl: "/images/rideshare.png",
     github: "http://github.com/rideshare",
     technologies: ["python", "flask", "mongodb"],
     url: "http://rideshare.com",
