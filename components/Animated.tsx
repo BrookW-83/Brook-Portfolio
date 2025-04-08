@@ -54,13 +54,13 @@ const AnimatedCoder = () => {
         */}
         <div
           ref={leftEyeRef}
-          className="absolute bg-black rounded-full w-0.5 h-0.5 lg:w-1 lg:h-1"
-          style={{ top: "48%", left: "50%" }}
+          className="absolute bg-gray-800 rounded-full w-0.5 h-0.5 lg:w-3 lg:h-3"
+          style={{ top: "47%", left: "49%" }}
         />
         <div
           ref={rightEyeRef}
-          className="absolute bg-black rounded-full w-0.5 h-0.5 lg:w-1 lg:h-1"
-          style={{ top: "48%", left: "58%" }}
+          className="absolute bg-gray-800 rounded-full w-0.5 h-0.5 lg:w-3 lg:h-3"
+          style={{ top: "47%", left: "57%" }}
         />
       </div>
     </>
