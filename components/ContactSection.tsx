@@ -9,43 +9,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
-
-// Contact methods data
-const contactMethods = [
-  {
-    id: "email",
-    title: "Email",
-    value: "nathnaelteshome10@gmail.com",
-    icon: Mail,
-    action: {
-      text: "Send an email",
-      url: "mailto:nathnaelteshome10@gmail.com",
-    },
-  },
-  {
-    id: "social",
-    title: "Social Media",
-    value: "Find me on social platforms",
-    icon: MessageSquare,
-    socialLinks: [
-      {
-        name: "GitHub",
-        url: "https://github.com/nathnaelteshome",
-        icon: Github,
-      },
-      {
-        name: "LinkedIn",
-        url: "https://linkedin.com/in/nathnaelteshome",
-        icon: Linkedin,
-      },
-      {
-        name: "Twitter",
-        url: "https://twitter.com/nathnaelteshome",
-        icon: Twitter,
-      },
-    ],
-  },
-];
+import { contactMethods } from "@/data/data";
 
 // Form fields configuration
 const formFields = [
@@ -136,7 +100,7 @@ export default function ContactSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="mx-auto"
+        className="mx-auto "
       >
         <h2 className="text-2xl font-bold mb-4">Get In Touch</h2>
         <p className="text-gray-400 max-w-xl mb-12">
@@ -144,7 +108,8 @@ export default function ContactSection() {
           question or just want to say hi, I'll try my best to get back to you!
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 ">
+          {/* left secoint */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -218,12 +183,13 @@ export default function ContactSection() {
             </form>
           </motion.div>
 
+          {/* right section */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex flex-col justify-center"
+            className="flex  flex-col justify-start"
           >
             <div className="space-y-8">
               {contactMethods.map((method) => (
@@ -239,7 +205,9 @@ export default function ContactSection() {
                       <h3 className="text-lg font-semibold mb-1">
                         {method.title}
                       </h3>
-                      <p className="text-gray-400">{method.value}</p>
+                      <p className="text-gray-400 hidden sm:block">
+                        {method.value}
+                      </p>
 
                       {method.action && (
                         <a

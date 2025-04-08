@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <MouseFollower />
         <NavBar />
-        <div className="w-[65%] m-auto">{children}</div>
+        <div className="w-[95%] sm:w-[80%] md:w-[65%] m-auto">{children}</div>
       </body>
     </html>
   );

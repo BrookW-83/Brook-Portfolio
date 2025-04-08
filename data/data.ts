@@ -1,4 +1,5 @@
 import { desc, section } from "framer-motion/client";
+import { Github, Linkedin, Mail, MessageSquare, Twitter } from "lucide-react";
 
 export const Title = "Nath.";
 
@@ -228,3 +229,40 @@ export const Contact2 = {
   gmail:
     "https://mail.google.com/mail/?view=cm&fs=1&to=nathnaelteshome10@gmail.com",
 };
+
+// Contact methods data
+export const contactMethods = [
+  {
+    id: "email",
+    title: "Email",
+    value: "nathnaelteshome10@gmail.com",
+    icon: Mail,
+    action: {
+      text: "Send an email",
+      url: "mailto:nathnaelteshome10@gmail.com",
+    },
+  },
+  {
+    id: "social",
+    title: "Social Media",
+    value: "Find me on social platforms",
+    icon: MessageSquare,
+    socialLinks: [
+      {
+        name: "GitHub",
+        url: "https://github.com/nathnaelteshome",
+        icon: Github,
+      },
+      {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/nathnaelteshome",
+        icon: Linkedin,
+      },
+      {
+        name: "Twitter",
+        url: "https://twitter.com/nathnaelteshome",
+        icon: Twitter,
+      },
+    ],
+  },
+];

@@ -69,10 +69,10 @@ export default function MouseFollower() {
       <motion.div
         className="rounded-full border-2 border-secondary"
         animate={{
-          width: isHovering ? 70 : 40,
-          height: isHovering ? 70 : 40,
-          x: isHovering ? -30 : -15,
-          y: isHovering ? -30 : -15,
+          width: isHovering ? 90 : 60,
+          height: isHovering ? 90 : 60,
+          x: isHovering ? -40 : -25,
+          y: isHovering ? -40 : -25,
           opacity: isHovering ? 0.8 : 0.5,
         }}
         transition={{
