@@ -1,4 +1,6 @@
-import { section } from "framer-motion/client";
+import { desc, section } from "framer-motion/client";
+
+export const Title = "Nath.";
 
 export const Hero = {
   pTag: "Hi, My name is",
@@ -116,36 +118,108 @@ export const ProjectSectionData = {
 };
 
 export const menuItems = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "Contacts", href: "#" },
+  { name: "Home", href: "hero" },
+  { name: "About", href: "about" },
+  { name: "Experience", href: "experience" },
+  { name: "Projects", href: "projects" },
 ];
 
 export const projects = [
   {
     name: "rateeat",
     tag: "featured project",
-    description:
-      "rateeat is a web application that allows users to rate and review restaurants. it is built with react, node.js, and mongodb. the application has a user-friendly interface and allows users to search for restaurants by location, cuisine, and rating. users can also create an account to save their favorite restaurants and reviews.",
+    description: [
+      "rateeat is a web application that allows users to rate and review restaurants.",
+      "It is built with Python, Flask, and MongoDB.",
+      "The application provides a user-friendly interface for searching restaurants by location, cuisine, and rating.",
+      "Users can create accounts to save their favorite restaurants and reviews.",
+    ],
     imageurl: "/images/rateeat.png",
     technologies: ["python", "flask", "mongodb"],
-    github: "http://github.com/rateeat",
-    url: "http://rateeat.com",
+    github: "",
+    url: "http://rateeat.app",
   },
   {
     name: "rideshare",
     tag: "featured project",
-    description:
-      "rideshare is a web application that allows users to find and book rides with other users. it is built with react, node.js, and mongodb. the application has a user-friendly interface and allows users to search for rides by location, date, and time. users can also create an account to save their favorite rides and drivers.",
+    description: [
+      "rideshare is a web application that connects users to find and book rides with others.",
+      "It is built with Python, Flask, and MongoDB.",
+      "The platform offers a seamless interface for searching rides by location, date, and time.",
+      "Users can create accounts to save their favorite rides and drivers.",
+    ],
     imageurl: "/images/rideshare.png",
-    github: "http://github.com/rideshare",
     technologies: ["python", "flask", "mongodb"],
-    url: "http://rideshare.com",
+    github: "",
+    url: "https://rideshare.a2sv.org/home",
+  },
+  {
+    name: "ESSS LP",
+    tag: "featured project",
+    description: [
+      "Ethiopian Space Science Society LP is an innovative learning platform designed for the Ethiopian Space Science Society to provide accessible space science education.",
+      "Built with React and Redux Toolkit, it offers intuitive user interfaces and efficient state management.",
+      "The platform integrates MongoDB for streamlined database operations and OAuth 2.0 for secure user authentication.",
+      "It serves over 500 users, enhancing engagement and learning experiences.",
+    ],
+    imageurl: "/images/esss.png",
+    technologies: ["react", "redux toolkit", "mongodb", "oauth 2.0"],
+    github: "https://github.com/esssweb/ESSS-learning-platform",
+    url: "http://esss-learning-platform.com",
+  },
+  {
+    name: "Nath. Store",
+    tag: "fun project",
+    description: [
+      "Nath. Store is an e-commerce platform for buying and selling products.",
+      "It is built with Mern stack.",
+      "The application features a user-friendly interface for searching products by category, price, and rating.",
+      "Users can create accounts to save their favorite products and sellers.",
+    ],
+    github: "https://github.com/nathnaelteshome/react-e-commerce-app.git",
+    imageurl: "/images/e-comomerce.png",
+    technologies: ["react", "expressjs", "Scss", "mongodb"],
+    url: "https://nathstore.vercel.app/",
+  },
+  {
+    name: "Netflix Clone",
+    tag: "fun project",
+    description: [
+      "Netflix Clone is a web application that mimics the functionality of Netflix.",
+      "It is built with React and Redux Toolkit.",
+      "The application provides a user-friendly interface for searching and watching movies and TV shows.",
+      "Users can create accounts to save their favorite movies and shows.",
+    ],
+    github: "https://github.com/nathnaelteshome/netflix_clone",
+    imageurl: "/images/netflix-clone.png",
+    technologies: ["redux", "vite", "react", "tailwind"],
+    url: "https://netflix-clone.vercel.app/",
+  },
+
+  {
+    name: "Chat App",
+    tag: "fun project",
+    description: [
+      "Chat App is fun project i worked on it is a real-time messaging application that allows users to communicate with each other.",
+      "It is built with Python, Flask, and MongoDB.",
+      "The application provides a user-friendly interface for sending and receiving messages in real-time.",
+      "Users can create accounts to save their favorite chats and contacts.",
+    ],
+    github: "https://github.com/nathnaelteshome/react-chat-app",
+    imageurl: "/images/chatapp.png",
+    technologies: ["redux", "vite", "react", "tailwind"],
+    url: "https://github.com/nathnaelteshome/react-chat-app",
   },
 ];
 
 export const Contact = {
+  github: "https:/www.github.com/nathnaelteshome",
+  linkedin: "https://www.linkedin.com/in/nathnaelteshome",
+  gmail:
+    "https://mail.google.com/mail/?view=cm&fs=1&to=nathnaelteshome10@gmail.com",
+};
+
+export const Contact2 = {
   facebook: "https://www.facebook.com/nathnael.teshome",
   github: "https:/www.github.com/nathnaelteshome",
   instagram: "https://www.instagram.com/nathnaelteshome",

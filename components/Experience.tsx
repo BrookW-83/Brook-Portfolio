@@ -1,5 +1,6 @@
 "use client";
 import { ExperienceData, ExperienceSection } from "@/data/data";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const Experience = () => {
@@ -7,8 +8,14 @@ const Experience = () => {
   const activeExperience = ExperienceData.find((item) => item.id === activeId);
 
   return (
-    <section className="py-12 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="experience" className="flex flex-col py-32 lg:py-48">
+      <motion.div
+        className="mx-auto w-full"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-2xl sm:text-3xl font-bold  mb-10">
           {ExperienceSection.hTag}
         </h2>
@@ -16,7 +23,7 @@ const Experience = () => {
         <div className="flex flex-col md:flex-row">
           {/* Left side - company list */}
           <div className="relative w-full md:w-1/4  mb-8 md:mb-0">
-            <div className="flex md:flex-col overflow-x-auto no-scrollbar">
+            <div className="flex md:flex-col overflow-x-auto md:overflow-x-clip no-scrollbar">
               {ExperienceData.map((exp) => (
                 <button
                   key={exp.id}
@@ -59,7 +66,7 @@ const Experience = () => {
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

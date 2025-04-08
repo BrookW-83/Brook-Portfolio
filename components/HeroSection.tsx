@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col justify-center">
+    <section id="hero" className="flex flex-col justify-center">
       <p className="text-lg">{Hero.pTag}</p>
       <h1 className="text-3xl font-bold">{Hero.hTag}</h1>
       <h2 className="text-xl text-gray-600">{Hero.hTag2}</h2>
@@ -15,7 +15,7 @@ const HeroSection = () => {
           <FaArrowRightLong />
         </span>
       </Button>
-    </div>
+    </section>
   );
 };
 
