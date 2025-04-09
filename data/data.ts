@@ -261,7 +261,8 @@ export const ExperienceData = [
 ];
 
 export const menuItems = [
-  { name: "About", href: "about" },
+  // { name: "About", href: "about" },
+  { name: "Skills", href: "skills" },
   { name: "Experience", href: "experience" },
   { name: "Projects", href: "projects" },
   { name: "Contact", href: "contact" },

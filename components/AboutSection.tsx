@@ -10,11 +10,11 @@ import ArrowButton from "./ArrowButton";
 
 const AboutSection = () => {
   return (
-    <div className="h-full gap-y-24 flex flex-col justify-center">
-      <section
-        id="about"
-        className="flex flex-col lg:flex-row items-center  justify-around pt-32 xl:pt-0"
-      >
+    <section
+      id="about"
+      className="h-full gap-y-24 flex flex-col justify-center"
+    >
+      <div className="flex flex-col lg:flex-row items-center  justify-around pt-32 xl:pt-0">
         {/* Left side: About text */}
         <motion.div
           className="flex flex-3 flex-col"
@@ -49,9 +49,9 @@ const AboutSection = () => {
         >
           <AnimatedCoder />
         </motion.div>
-      </section>
+      </div>
       <ArrowButton />
-    </div>
+    </section>
   );
 };
 
