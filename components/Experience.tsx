@@ -62,11 +62,6 @@ const Experience = () => {
                 </li>
               ))}
             </ul>
-            {activeExperience?.description && (
-              <p className="text-gray-400 mt-6">
-                {activeExperience?.description}
-              </p>
-            )}
           </div>
         </div>
       </motion.div>
