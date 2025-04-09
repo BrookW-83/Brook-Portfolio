@@ -6,7 +6,6 @@ import ProjectSection from "@/components/ProjectSection";
 import FoodAppCard from "@/components/FoodApp";
 import NavBar from "@/components/NavBar";
 import SkillsSection from "@/components/SkillSection";
-import { Contact } from "lucide-react";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {

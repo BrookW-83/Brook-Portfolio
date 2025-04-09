@@ -1,10 +1,12 @@
 "use client";
 
+import "dotenv/config";
+
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { menuItems, Title } from "@/data/data";
-import Link from "next/link";
+import { sendEmail } from "@/utils/sendEmail";
 
 export default function NavBar() {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,6 +16,21 @@ export default function NavBar() {
   const lineRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    // Ensure the effect runs on component mount
+    console.log("Navbar node env", process.env.NEXT_PUBLIC_NODE_ENV);
+
+    sendEmail("Portfolio Initial Visit");
+
+    console.log(
+      "nav bar public key email",
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    );
+    if (process.env.NEXT_PUBLIC_NODE_ENV === "production") {
+      console.log("Initial visit email sent");
+    }
+  }, []);
 
   // Calculate positions for menu items to appear as line passes through
   useEffect(() => {

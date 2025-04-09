@@ -8,7 +8,11 @@ const AnimatedCoder = () => {
   const rightEyeRef = useRef<HTMLDivElement>(null);
   const isSmallScreen =
     typeof window !== "undefined" && window.innerWidth < 768;
-  const maxMovement = isSmallScreen ? 3 : 6;
+  const isMediumScreen =
+    typeof window !== "undefined" &&
+    window.innerWidth >= 768 &&
+    window.innerWidth < 1024;
+  const maxMovement = isSmallScreen ? 3 : isMediumScreen ? 4 : 6;
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -54,12 +58,12 @@ const AnimatedCoder = () => {
         */}
         <div
           ref={leftEyeRef}
-          className="absolute bg-gray-800 rounded-full w-0.5 h-0.5 lg:w-3 lg:h-3"
+          className="absolute bg-gray-800 rounded-full   w-2 h-2 xl:w-3 xl:h-3"
           style={{ top: "47%", left: "49%" }}
         />
         <div
           ref={rightEyeRef}
-          className="absolute bg-gray-800 rounded-full w-0.5 h-0.5 lg:w-3 lg:h-3"
+          className="absolute bg-gray-800 rounded-full  w-2 h-2 xl:w-3 xl:h-3"
           style={{ top: "47%", left: "57%" }}
         />
       </div>
