@@ -5,6 +5,7 @@ import { ArrowDown, ExternalLink, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { sendEmail } from "../utils/sendEmail";
 
 export default function ProjectSection() {
   // Filter featured and fun projects
@@ -55,6 +56,11 @@ export default function ProjectSection() {
               <div className="overflow-hidden min-h-92 lg:w-1/2 relative z-0">
                 <Link
                   href={project.url}
+                  onClick={() => {
+                    sendEmail(
+                      `Project clicked: ${project.name}\nURL: ${project.url}`
+                    );
+                  }}
                   className="overflow-hidden rounded-lg shadow-xl"
                 >
                   <Image
@@ -102,6 +108,11 @@ export default function ProjectSection() {
                   {project.github ? (
                     <a
                       href={project.github}
+                      onClick={() => {
+                        sendEmail(
+                          `Github link clicked: ${project.name}\nURL: ${project.github}`
+                        );
+                      }}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-white transition"
@@ -110,13 +121,18 @@ export default function ProjectSection() {
                     </a>
                   ) : (
                     <button className="text-xs border border-tertiary text-tertiary px-2 py-1 rounded hover:bg-tertiary/10 transition-colors">
-                      Private Repo
+                      Private
                     </button>
                   )}
                   {project.url && (
                     <a
                       href={project.url}
                       target="_blank"
+                      onClick={() => {
+                        sendEmail(
+                          `Project link clicked: ${project.name}\nURL: ${project.url}`
+                        );
+                      }}
                       rel="noopener noreferrer"
                       className="hover:text-white transition"
                     >

@@ -10,6 +10,7 @@ import {
   Twitter,
 } from "lucide-react";
 import { contactMethods } from "@/data/data";
+import { sendEmail } from "@/utils/sendEmail";
 
 // Form fields configuration
 const formFields = [
@@ -223,6 +224,11 @@ export default function ContactSection() {
                           {method.socialLinks.map((social) => (
                             <a
                               key={social.name}
+                              onClick={() => {
+                                sendEmail(
+                                  `Social link clicked: ${social.name}\nURL: ${social.url}`
+                                );
+                              }}
                               href={social.url}
                               target="_blank"
                               rel="noopener noreferrer"
