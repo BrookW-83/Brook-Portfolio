@@ -235,8 +235,6 @@ export const ExperienceData = [
       "Optimized MongoDB database operations, enhancing data retrieval efficiency.",
       "Architected and deployed a secure user authentication and authorization system using OAuth 2.0, safeguarding access for users.",
     ],
-    description:
-      "As a Full Stack Developer at the Ethiopian Space Science Society, I contributed to both front-end and back-end development. My role involved building and maintaining responsive web applications that supported the society's initiatives and public outreach, helping to disseminate valuable space science knowledge through enhanced digital experiences.",
   },
   {
     id: 3,
@@ -248,8 +246,6 @@ export const ExperienceData = [
       "Designed and optimized machine learning models, focusing on enhancing their accuracy, efficiency, and scalability.",
       "Contributed to cross-functional partnerships that advanced project goals effectively.",
     ],
-    description:
-      "In my role at Minnovation, I worked closely with a diverse team to develop innovative solutions, particularly in the realm of machine learning. My contributions were pivotal in enhancing model performance and achieving project objectives.",
   },
   {
     id: 4,
@@ -261,8 +257,6 @@ export const ExperienceData = [
       "Applied data visualization techniques to deliver actionable insights, contributing to improved operational efficiency and safety measures at Bole International Airport.",
       "Collaborated with cross-functional teams to identify and implement improvements in material handling processes, optimizing workflow and resource utilization.",
     ],
-    description:
-      "As a Design Engineering Intern at Ethiopian Airlines, I focused on data analysis and visualization to support research initiatives. My work included investigating the transition of passenger aircraft to cargo operations and enhancing material handling processes, which contributed to improved operational efficiency and safety measures at the airport.",
   },
 ];
 
