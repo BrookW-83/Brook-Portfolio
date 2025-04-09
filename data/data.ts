@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, MessageSquare, Twitter } from "lucide-react";
 
 export const Title = "Nath.";
 
-export const Hero = {
+export const HeroSectionData = {
   pTag: "Hi, My name is",
   hTag: "Nathnael Teshome",
   hTag2: "I make websites that go brr.",
@@ -13,7 +13,12 @@ export const Hero = {
   button: "Get In Touch",
 };
 
-export const About = {
+export const ProjectSectionData = {
+  sectionId: "03.",
+  hTag: "My Projects",
+};
+
+export const AboutSectionData = {
   hTag: "About Me",
   h1Tag: "Hi, I am Nathnael Teshome",
   pTag2:
@@ -21,38 +26,181 @@ export const About = {
   animatedImg: "/animatedcoder4.svg",
 };
 
+// Updated TechStacks with more detailed information
+export const TechStacks = {
+  frontEnd: ["TypeScript", "React", "Next.js", "VueJs", "NuxtJs"],
+  BackEnd: ["Node.js", "Express.js", ".NET", "C#", "NestJs", "Django", "Go"],
+  Mobile: ["React Native"],
+};
+
+export const FeaturedSkillTitle = [
+  {
+    id: 1,
+    name: "FrontEnd",
+    description:
+      "I am a Frontend developer with a passion for building beautiful and functional user interfaces",
+  },
+  {
+    id: 2,
+    name: "BackEnd",
+    description:
+      "I am a Backend developer with a passion for building scalable and efficient server-side applications.",
+  },
+  {
+    id: 3,
+    name: "Mobile",
+    description:
+      "I am a Mobile developer with a passion for building cross-platform mobile applications.",
+  },
+];
+
+// Updated Skills array with more detailed information
 export const Skills = [
   {
     id: 1,
     name: "JavaScript",
     icon: "/images/skills/javascript.svg",
+    proficiency: 75,
+    description:
+      "Building interactive and dynamic web applications with modern JavaScript.",
+    category: "frontEnd",
   },
   {
     id: 2,
     name: "React",
-    icon: "/images/skills/react.svg",
+    icon: "/images/skills/reactjs.svg",
+    proficiency: 88,
+    description:
+      "Creating reusable components and managing application state efficiently.",
+    category: "frontEnd",
   },
   {
     id: 3,
     name: "Node.js",
     icon: "/images/skills/nodejs.svg",
+    proficiency: 90,
+    description:
+      "Developing server-side applications with JavaScript runtime environment.",
+    category: "BackEnd",
   },
   {
     id: 4,
     name: "Next.js",
     icon: "/images/skills/nextjs.svg",
+    proficiency: 89,
+    description:
+      "Building server-rendered React applications with optimized performance.",
+    category: "frontEnd",
   },
   {
     id: 5,
     name: "Tailwind CSS",
     icon: "/images/skills/tailwindcss.svg",
+    proficiency: 95,
+    description:
+      "Crafting responsive and utility-first designs with minimal CSS.",
+    category: "frontEnd",
   },
   {
     id: 6,
     name: "TypeScript",
     icon: "/images/skills/typescript.svg",
+    proficiency: 87,
+    description:
+      "Writing type-safe code to reduce bugs and improve developer experience.",
+    category: "frontEnd",
+  },
+  {
+    id: 7,
+    name: "Express.js",
+    icon: "/images/skills/expressjs.svg",
+    proficiency: 89,
+    description: "Creating robust APIs and web servers with Node.js framework.",
+    category: "BackEnd",
+  },
+  {
+    id: 8,
+    name: ".NET",
+    icon: "/images/skills/dotnet.svg",
+    proficiency: 86,
+    description:
+      "Building enterprise-grade applications with Microsoft's framework.",
+    category: "BackEnd",
+  },
+  {
+    id: 9,
+    name: "C#",
+    icon: "/images/skills/csharp.svg",
+    proficiency: 82,
+    description:
+      "Developing type-safe applications with object-oriented programming.",
+    category: "BackEnd",
+  },
+  {
+    id: 10,
+    name: "NestJs",
+    icon: "/images/skills/nestjs.svg",
+    proficiency: 82,
+    description:
+      "Creating scalable server-side applications with progressive Node.js framework.",
+    category: "BackEnd",
+  },
+  {
+    id: 11,
+    name: "Django",
+    icon: "/images/skills/django.svg",
+    proficiency: 78,
+    description:
+      "Building web applications with Python's high-level framework.",
+    category: "BackEnd",
+  },
+  {
+    id: 12,
+    name: "Go",
+    icon: "/images/skills/go.svg",
+    proficiency: 75,
+    description: "Developing efficient and concurrent server applications.",
+    category: "BackEnd",
+  },
+  {
+    id: 13,
+    name: "React Native",
+    icon: "/images/skills/react-native.svg",
+    proficiency: 80,
+    description: "Building cross-platform mobile applications with React.",
+    category: "Mobile",
+  },
+  {
+    id: 14,
+    name: "VueJs",
+    icon: "/images/skills/vuejs.svg",
+    proficiency: 80,
+    description: "Creating progressive web interfaces with the Vue ecosystem.",
+    category: "frontEnd",
+  },
+  {
+    id: 15,
+    name: "NuxtJs",
+    icon: "/images/skills/nuxtjs.svg",
+    proficiency: 78,
+    description:
+      "Building server-rendered Vue applications with enhanced features.",
+    category: "frontEnd",
   },
 ];
+
+// Skill section content
+export const SkillSectionContent = {
+  title: "Skills & Expertise",
+  subtitle:
+    "My technical toolkit and areas of expertise that I've developed throughout my journey",
+  categories: [
+    { id: "frontend", label: "Frontend" },
+    { id: "backend", label: "Backend" },
+    { id: "mobile", label: "Mobile" },
+  ],
+  featuredSkillsTitle: "Core Competencies",
+};
 
 export const ExperienceSection = {
   hTag: "Where I've Worked",
@@ -113,11 +261,6 @@ export const ExperienceData = [
   },
 ];
 
-export const ProjectSectionData = {
-  sectionId: "03.",
-  hTag: "My Projects",
-};
-
 export const menuItems = [
   { name: "About", href: "about" },
   { name: "Experience", href: "experience" },
@@ -145,28 +288,14 @@ export const projects = [
     tag: "featured project",
     description: [
       "rideshare is a web application that connects users to find and book rides with others.",
-      "It is built with Python, Flask, and MongoDB.",
-      "The platform offers a seamless interface for searching rides by location, date, and time.",
-      "Users can create accounts to save their favorite rides and drivers.",
+      "it is built with python, flask, and mongodb.",
+      "the platform offers a seamless interface for searching rides by location, date, and time.",
+      "users can create accounts to save their favorite rides and drivers.",
     ],
     imageurl: "/images/rideshare.png",
     technologies: ["python", "flask", "mongodb"],
     github: "",
     url: "https://rideshare.a2sv.org/home",
-  },
-  {
-    name: "ESSS LP",
-    tag: "featured project",
-    description: [
-      "Ethiopian Space Science Society LP is an innovative learning platform designed for the Ethiopian Space Science Society to provide accessible space science education.",
-      "Built with React and Redux Toolkit, it offers intuitive user interfaces and efficient state management.",
-      "The platform integrates MongoDB for streamlined database operations and OAuth 2.0 for secure user authentication.",
-      "It serves over 500 users, enhancing engagement and learning experiences.",
-    ],
-    imageurl: "/images/esss.png",
-    technologies: ["react", "redux toolkit", "mongodb", "oauth 2.0"],
-    github: "https://github.com/esssweb/ESSS-learning-platform",
-    url: "http://esss-learning-platform.com",
   },
   {
     name: "Nath. Store",
@@ -181,6 +310,20 @@ export const projects = [
     imageurl: "/images/e-comomerce.png",
     technologies: ["react", "expressjs", "Scss", "mongodb"],
     url: "https://nathstore.vercel.app/",
+  },
+  {
+    name: "ESSS LP",
+    tag: "featured project",
+    description: [
+      "Ethiopian Space Science Society LP is an innovative learning platform designed for the Ethiopian Space Science Society to provide accessible space science education.",
+      "Built with React and Redux Toolkit, it offers intuitive user interfaces and efficient state management.",
+      "The platform integrates MongoDB for streamlined database operations and OAuth 2.0 for secure user authentication.",
+      "It serves over 500 users, enhancing engagement and learning experiences.",
+    ],
+    imageurl: "/images/esss.png",
+    technologies: ["react", "redux toolkit", "mongodb", "oauth 2.0"],
+    github: "https://github.com/esssweb/ESSS-learning-platform",
+    url: "http://esss-learning-platform.com",
   },
   {
     name: "Netflix Clone",
@@ -212,23 +355,6 @@ export const projects = [
     url: "https://github.com/nathnaelteshome/react-chat-app",
   },
 ];
-
-export const Contact = {
-  github: "https:/www.github.com/nathnaelteshome",
-  linkedin: "https://www.linkedin.com/in/nathnaelteshome",
-  gmail:
-    "https://mail.google.com/mail/?view=cm&fs=1&to=nathnaelteshome10@gmail.com",
-};
-
-export const Contact2 = {
-  facebook: "https://www.facebook.com/nathnael.teshome",
-  github: "https:/www.github.com/nathnaelteshome",
-  instagram: "https://www.instagram.com/nathnaelteshome",
-  linkedin: "https://www.linkedin.com/in/nathnaelteshome",
-  twitter: "https://twitter.com/nathnaelteshome",
-  gmail:
-    "https://mail.google.com/mail/?view=cm&fs=1&to=nathnaelteshome10@gmail.com",
-};
 
 // Contact methods data
 export const contactMethods = [

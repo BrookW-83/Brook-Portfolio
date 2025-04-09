@@ -1,152 +1,249 @@
 "use client";
-import { Skills } from "@/data/data";
-import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Skills,
+  TechStacks,
+  SkillSectionContent,
+  FeaturedSkillTitle,
+} from "@/data/data";
+import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
-export default function SkillsSection() {
+const SkillSection = () => {
+  const [activeTab, setActiveTab] = useState("frontend");
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
 
-  return (
-    <section id="skills" className="py-20 text-white">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="mx-auto"
-      >
-        <h2 className="text-2xl font-bold mb-16">Skills & Technologies</h2>
+  // Get skills by category
+  const getSkillsByCategory = (category: string) => {
+    return Skills.filter(
+      (skill) => skill.category.toLowerCase() === category.toLowerCase()
+    );
+  };
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {Skills.map((skill, index) => (
+  // Get skills by tech stack
+  const getSkillsByTechStack = (category: string) => {
+    let skills: string[] = [];
+
+    if (category === "frontend") {
+      skills = TechStacks.frontEnd;
+    } else if (category === "backend") {
+      skills = TechStacks.BackEnd;
+    } else if (category === "mobile") {
+      skills = TechStacks.Mobile;
+    }
+
+    return skills.map((skillName) => {
+      const skillData = Skills.find((s) => s.name === skillName);
+      return (
+        skillData || {
+          id: 0,
+          name: skillName,
+          icon: "/placeholder.svg",
+          proficiency: 70,
+          description: `Expertise in ${skillName}`,
+          category: category,
+        }
+      );
+    });
+  };
+
+  const tabVariants = {
+    active: {
+      backgroundColor: "rgba(255, 255, 255, 0.1)",
+      color: "rgb(var(--color-tertiary))",
+      borderColor: "rgb(var(--color-tertiary))",
+      transition: { duration: 0.3 },
+    },
+    inactive: {
+      backgroundColor: "transparent",
+      color: "rgb(209, 213, 219)",
+      borderColor: "rgba(255, 255, 255, 0.1)",
+      transition: { duration: 0.3 },
+    },
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 },
+    },
+  };
+
+  const renderSkillList = (category: string) => {
+    const skills = getSkillsByTechStack(category);
+
+    return (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={category}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.3 }}
+          className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
+        >
+          {skills.map((skill, index) => (
             <motion.div
-              key={skill.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="relative"
+              key={skill.id || index}
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 10px 30px -15px rgba(0, 0, 0, 0.7)",
+              }}
+              className="bg-black/20  backdrop-blur-sm border border-white/10 rounded-xl p-6 relative overflow-hidden group"
               onMouseEnter={() => setHoveredSkill(skill.id)}
               onMouseLeave={() => setHoveredSkill(null)}
             >
-              <div className="group flex flex-col items-center">
-                <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
-                  <div
-                    className={`absolute inset-0 rounded-full bg-tertiary/10 transition-all duration-300 ${
-                      hoveredSkill === skill.id ? "scale-110" : "scale-0"
-                    }`}
-                  ></div>
+              {/* Background glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div className="flex items-center gap-4 mb-4 relative z-10">
+                <div className="w-12 h-12 rounded-lg bg-black/30 flex items-center justify-center p-2 border border-white/10">
                   <Image
                     src={skill.icon || "/placeholder.svg"}
                     alt={skill.name}
-                    width={48}
-                    height={48}
-                    className={`relative z-10 transition-all duration-300 ${
-                      hoveredSkill === skill.id ? "scale-110" : ""
-                    }`}
+                    width={30}
+                    height={30}
+                    className="object-contain"
                   />
                 </div>
-                <span className="text-center font-mono text-sm">
+                <h3 className="text-lg font-semibold text-white">
                   {skill.name}
-                </span>
-                <motion.div
-                  className="h-0.5 bg-tertiary mt-2"
-                  initial={{ width: 0 }}
-                  animate={{ width: hoveredSkill === skill.id ? "100%" : 0 }}
-                  transition={{ duration: 0.3 }}
-                ></motion.div>
+                </h3>
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex justify-between mb-1">
+                  <span className="text-xs text-gray-400">Proficiency</span>
+                  <span className="text-xs font-medium text-tertiary">
+                    {skill.proficiency}%
+                  </span>
+                </div>
+                <div className="w-full bg-gray-800/50 rounded-full h-1.5">
+                  <motion.div
+                    className="bg-tertiary h-1.5 rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${skill.proficiency}%` }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                  ></motion.div>
+                </div>
+              </div>
+
+              {skill.description && (
+                <p className="text-sm text-gray-400 mt-4 relative z-10">
+                  {skill.description}
+                </p>
+              )}
+
+              {/* Animated border on hover */}
+              {/* <motion.div
+                className="absolute bottom-0 left-0 h-1 bg-tertiary"
+                initial={{ width: 0 }}
+                animate={{ width: hoveredSkill === skill.id ? "100%" : "0%" }}
+                transition={{ duration: 0.3 }}
+              ></motion.div> */}
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
+    );
+  };
+
+  return (
+    <section id="skills" className="py-24 overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="container mx-auto px-4 "
+      >
+        <div className="mb-16">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="w-fit">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                {SkillSectionContent.title}
+              </h2>
+              <div className="w-20 mx-auto h-1 bg-tertiary  mb-6"></div>
+            </div>
+            <p className="text-gray-400 max-w-2xl">
+              {SkillSectionContent.subtitle}
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Featured skills cards */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 xl:gap-8 gap-2 mb-16 "
+        >
+          {FeaturedSkillTitle.map((skill, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+              className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl p-8 relative overflow-hidden"
+            >
+              {/* Decorative element */}
+              <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-tertiary/10 blur-xl"></div>
+
+              <h3 className="text-2xl font-bold text-white mb-4 relative z-10">
+                {skill.name}
+              </h3>
+              <p className="text-gray-400 relative z-10">{skill.description}</p>
+
+              <div className="absolute bottom-4 right-4 text-tertiary">
+                <ChevronRight size={20} />
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="bg-background/50 border border-slate-700/50 rounded-lg p-6"
-          >
-            <h3 className="text-xl font-bold mb-4 text-tertiary">Frontend</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                React & Next.js
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                TypeScript
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                Tailwind CSS
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                Framer Motion
-              </li>
-            </ul>
-          </motion.div>
+        {/* Tech stack tabs */}
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-2 justify-center mb-8 ">
+            {SkillSectionContent.categories.map((category) => (
+              <motion.button
+                key={category.id}
+                variants={tabVariants}
+                animate={activeTab === category.id ? "active" : "inactive"}
+                onClick={() => setActiveTab(category.id)}
+                className="px-6 py-3 rounded-full border text-sm font-medium transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {category.label}
+              </motion.button>
+            ))}
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="bg-background/50 border border-slate-700/50 rounded-lg p-6"
-          >
-            <h3 className="text-xl font-bold mb-4 text-tertiary">Backend</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                Node.js
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                Express
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                MongoDB
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                RESTful APIs
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-background/50 border border-slate-700/50 rounded-lg p-6"
-          >
-            <h3 className="text-xl font-bold mb-4 text-tertiary">Tools</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                Git & GitHub
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                VS Code
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                Figma
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
-                CI/CD
-              </li>
-            </ul>
-          </motion.div>
+          {renderSkillList(activeTab)}
         </div>
       </motion.div>
     </section>
   );
-}
+};
+
+export default SkillSection;

@@ -1,9 +1,10 @@
 "use client";
-import { About, Hero } from "@/data/data";
+import { AboutSectionData, HeroSectionData } from "@/data/data";
 import AnimatedCoder from "./Animated";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Link from "next/link";
 
 const AboutSection = () => {
   return (
@@ -19,16 +20,18 @@ const AboutSection = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl font-bold">{About.hTag}</h2>
-        <h3 className="text-xl text-gray-600">{About.h1Tag}</h3>
-        <p className="max-w-xl mt-4">{About.pTag2}</p>
+        <h2 className="text-2xl font-bold">{AboutSectionData.hTag}</h2>
+        <h3 className="text-xl text-gray-600">{AboutSectionData.h1Tag}</h3>
+        <p className="max-w-xl mt-4">{AboutSectionData.pTag2}</p>
 
-        <Button className="bg-custom02 font-semibold w-36 px-9 py-6 mt-6 flex justify-center ease-in-out items-center group transition-all duration-300 hover:shadow-[0px_0_15px_rgba(255,255,255,0.4)] hover:scale-105">
-          {Hero.button}
-          <span className="ml-1 transition-all group-hover:-translate-x-1 duration-300">
-            <FaArrowRightLong />
-          </span>
-        </Button>
+        <Link href="#contact" passHref>
+          <Button className="bg-custom02 font-semibold w-36 px-9 py-6 mt-6 flex justify-center ease-in-out items-center group transition-all duration-300 hover:shadow-[0px_0_15px_rgba(255,255,255,0.4)] hover:scale-105">
+            {HeroSectionData.button}
+            <span className="ml-1 transition-all group-hover:-translate-x-1 duration-300">
+              <FaArrowRightLong />
+            </span>
+          </Button>
+        </Link>
       </motion.div>
 
       {/* Right side: Animated coder image with eyes following the mouse */}

@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col font-mono gap-y-12 [&>*]:min-h-[90vh]">
       {/* <FoodAppCard /> */}
       <AboutSection />
-      {/* <SkillsSection /> */}
+      <SkillsSection />
       <Experience />
       <ProjectSection />
       <ContactSection />

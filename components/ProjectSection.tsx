@@ -9,21 +9,14 @@ import { sendEmail } from "../utils/sendEmail";
 
 export default function ProjectSection() {
   // Filter featured and fun projects
-  const featuredProjects = projects.filter(
-    (project) => project.tag === "featured project"
-  );
-  const funProjects = projects.filter(
-    (project) => project.tag === "fun project"
-  );
+
+  const funProjects = projects;
 
   // State to track how many fun projects to show
-  const [funProjectsToShow, setFunProjectsToShow] = useState(0);
+  const [funProjectsToShow, setFunProjectsToShow] = useState(3);
 
   // Combined projects to display
-  const projectsToDisplay = [
-    ...featuredProjects,
-    ...funProjects.slice(0, funProjectsToShow),
-  ];
+  const projectsToDisplay = [...projects.slice(0, funProjectsToShow)];
 
   // Handle show more button click
   const handleShowMore = () => {
@@ -152,8 +145,9 @@ export default function ProjectSection() {
               onClick={handleShowMore}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.5 }}
-              className=" gap-2 flex-row w-fit px-6 py-3 font-semibold text-tertiaryk group  rounded mt-6 flex justify-center ease-in-out items-center group transition-all duration-300 hover:shadow-[0px_0_15px_rgba(255,255,255,0.2)] hover:scale-105"
+              className="gap-2 flex-row w-fit px-6 py-3 font-semibold text-tertiary rounded mt-6 flex justify-center items-center group border border-tertiary/30 transition-all duration-300 hover:shadow-[0px_0_15px_rgba(255,255,255,0.2)]"
             >
               Show More
               <ArrowDown className="animate-bounce duration-700 group-hover:animate-none" />

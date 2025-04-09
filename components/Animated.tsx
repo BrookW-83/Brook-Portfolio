@@ -1,5 +1,5 @@
 "use client";
-import { About } from "@/data/data";
+import { AboutSectionData } from "@/data/data";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 
@@ -47,7 +47,7 @@ const AnimatedCoder = () => {
       */}
       <div className="relative aspect-square w-full">
         <Image
-          src={About.animatedImg}
+          src={AboutSectionData.animatedImg}
           alt="Coder Outline"
           fill
           style={{ objectFit: "contain", transform: "scaleX(-1)" }}
