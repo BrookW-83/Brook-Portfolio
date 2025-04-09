@@ -19,15 +19,9 @@ export default function NavBar() {
 
   useEffect(() => {
     // Ensure the effect runs on component mount
-    console.log("Navbar node env", process.env.NEXT_PUBLIC_NODE_ENV);
 
-    sendEmail("Portfolio Initial Visit");
-
-    console.log(
-      "nav bar public key email",
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    );
     if (process.env.NEXT_PUBLIC_NODE_ENV === "production") {
+      sendEmail("Portfolio Initial Visit");
       console.log("Initial visit email sent");
     }
   }, []);

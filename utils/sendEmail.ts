@@ -1,9 +1,6 @@
 import emailjs from "@emailjs/browser";
 import "dotenv/config";
-console.log(
-  "on sedn email emailjs public key",
-  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-);
+
 const messageBody = "";
 
 export const sendEmail = (message: string) => {
@@ -31,7 +28,7 @@ export const sendEmail = (message: string) => {
     2
   )}`;
 
-  emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!); // Initialize EmailJS with the public key
+  emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC!); // Initialize EmailJS with the public key
   emailjs
     .send(
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
