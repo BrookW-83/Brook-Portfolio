@@ -40,9 +40,7 @@ export const sendEmail = (message: string) => {
       }
     )
     .then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-      },
+      (response) => {},
       (err) => {
         console.log("FAILED...", err);
       }
