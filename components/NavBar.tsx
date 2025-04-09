@@ -61,9 +61,9 @@ export default function NavBar() {
   return (
     <nav
       className={cn(
-        " lg:w-[75%] w-full mx-auto  sticky bg-background/90   top-0 left-0 z-50 m-auto   transition-all duration-300 ease-in-out",
+        " lg:w-[75%] w-full mx-auto sticky bg-background/90 top-0 left-0 z-50 m-auto transition-all duration-300 ease-in-out",
 
-        hasScrolled && "shadow-lg shadow-black/50"
+        hasScrolled && "shadow-lg shadow-black/50 backdrop-blur-sm"
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

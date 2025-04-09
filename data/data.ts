@@ -19,13 +19,13 @@ export const ProjectSectionData = {
 };
 
 export const AboutSectionData = {
-  hTag: "About Me",
-  h1Tag: "Hi, I am Nathnael Teshome",
+  sectionId: "02.",
+  hTag: "Hi there!",
+  h1Tag: "I’m Nathnael, your go-to software engineer.",
   pTag2:
-    "I am a software engineer with a passion for building web applications. I have experience in JavaScript, React, and Node.js.I am currently working at a startup where I am responsible for building and maintaining the company's web applications. I am also involved in the design and development of new features.In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends. In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends.",
+    "I’m a full-stack(backend-heavy) developer who loves making cool web applications, While I specialize in JavaScript and Python i have a knack for picking up new things, My main expertise lies in crafting robust server-side solutions that keep everything running smoothly. When I’m not in front of a screen, you can find me diving into a good book or reading about the latest trends in technology.",
   animatedImg: "/animatedcoder4.svg",
 };
-
 // Updated TechStacks with more detailed information
 export const TechStacks = {
   frontEnd: ["TypeScript", "React", "Next.js", "VueJs", "NuxtJs"],
@@ -38,19 +38,19 @@ export const FeaturedSkillTitle = [
     id: 1,
     name: "FrontEnd",
     description:
-      "I am a Frontend developer with a passion for building beautiful and functional user interfaces",
+      "Vibrant storefront of a magical shop, where every button sparkles and every image tells a story.",
   },
   {
     id: 2,
     name: "BackEnd",
     description:
-      "I am a Backend developer with a passion for building scalable and efficient server-side applications.",
+      "Hidden engine of a powerful train, ensuring everything runs smoothly behind the scenes.",
   },
   {
     id: 3,
     name: "Mobile",
     description:
-      "I am a Mobile developer with a passion for building cross-platform mobile applications.",
+      "The art of creating enchanting apps that fit snugly in your pocket, ready to take you on adventures wherever you go.",
   },
 ];
 
@@ -191,6 +191,7 @@ export const Skills = [
 
 // Skill section content
 export const SkillSectionContent = {
+  sectionId: "01.",
   title: "Skills & Expertise",
   subtitle:
     "My technical toolkit and areas of expertise that I've developed throughout my journey",
@@ -203,6 +204,7 @@ export const SkillSectionContent = {
 };
 
 export const ExperienceSection = {
+  sectionId: "02.",
   hTag: "Where I've Worked",
 };
 

@@ -21,11 +21,13 @@ const AboutSection = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-2xl font-bold">{AboutSectionData.hTag}</h2>
-        <h3 className="text-xl text-gray-600">{AboutSectionData.h1Tag}</h3>
+        <h3 className="text-xl text-tertiary/85 text-shadow-[0px_0_15px_rgba(255,255,255,0.3)]">
+          {AboutSectionData.h1Tag}
+        </h3>
         <p className="max-w-xl mt-4">{AboutSectionData.pTag2}</p>
 
         <Link href="#contact" passHref>
-          <Button className="bg-custom02 font-semibold w-36 px-9 py-6 mt-6 flex justify-center ease-in-out items-center group transition-all duration-300 hover:shadow-[0px_0_15px_rgba(255,255,255,0.4)] hover:scale-105">
+          <Button className="border-1 border-tertiary/40 text-tertiary/90 shadow-[0px_0_15px_rgba(255,255,255,0.2)]  font-semibold w-36 px-9 py-6 mt-6 flex justify-center ease-in-out items-center group transition-all duration-300 hover:shadow-[0px_0_15px_rgba(255,255,255,0.8)] hover:scale-105">
             {HeroSectionData.button}
             <span className="ml-1 transition-all group-hover:-translate-x-1 duration-300">
               <FaArrowRightLong />

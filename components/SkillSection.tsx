@@ -180,8 +180,11 @@ const SkillSection = () => {
             viewport={{ once: true }}
           >
             <div className="w-fit">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                {SkillSectionContent.title}
+              <h2 className="text-xl text-tertiary font-mono mb-8">
+                {SkillSectionContent.sectionId}{" "}
+                <span className="text-2xl text-white font-bold ml-2">
+                  {SkillSectionContent.title}
+                </span>
               </h2>
               <div className="w-20 mx-auto h-1 bg-tertiary  mb-6"></div>
             </div>

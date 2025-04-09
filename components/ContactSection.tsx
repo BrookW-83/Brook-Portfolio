@@ -134,7 +134,7 @@ export default function ContactSection() {
                       onChange={handleChange}
                       required
                       rows={field.rows}
-                      className="w-full px-4 py-3 bg-transparent border border-slate-700 rounded-md focus:outline-none focus:ring-1 focus:ring-tertiary focus:border-tertiary transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-transparent border border-slate-700 rounded-md focus:outline-none focus:ring-1 focus:ring-tertiary/70 focus:border-tertiary/50 transition-colors resize-none"
                       placeholder={field.placeholder}
                     />
                   ) : (
@@ -145,7 +145,7 @@ export default function ContactSection() {
                       value={formData[field.id]}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-transparent border border-slate-700 rounded-md focus:outline-none focus:ring-1 focus:ring-tertiary focus:border-tertiary transition-colors"
+                      className="w-full px-4 py-3 bg-transparent border border-slate-700 rounded-md focus:outline-none focus:ring-1 focus:ring-tertiary/70 focus:border-tertiary/50 transition-colors"
                       placeholder={field.placeholder}
                     />
                   )}
@@ -159,7 +159,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={formState.isSubmitting || formState.isSubmitted}
-                className={`px-6 py-3 bg-tertiary text-white font-mono rounded-md hover:bg-tertiary/80 transition-colors flex items-center gap-2 ${
+                className={`px-6 py-3 bg-tertiary/80 text-white font-mono rounded-md hover:bg-tertiary/60 transition-colors flex items-center gap-2 ${
                   formState.isSubmitting || formState.isSubmitted
                     ? "opacity-70 cursor-not-allowed"
                     : ""

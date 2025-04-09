@@ -16,8 +16,11 @@ const Experience = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold  mb-10">
-          {ExperienceSection.hTag}
+        <h2 className="text-xl text-tertiary font-mono mb-8">
+          {ExperienceSection.sectionId}{" "}
+          <span className="text-2xl text-white font-bold ml-2">
+            {ExperienceSection.hTag}
+          </span>
         </h2>
 
         <div className="flex flex-col md:flex-row">

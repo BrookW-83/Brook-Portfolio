@@ -60,7 +60,7 @@ export default function ProjectSection() {
                     src={project.imageurl || "/placeholder.svg"}
                     alt={project.name}
                     fill
-                    className="object-cover w-full h-full filter grayscale hover:grayscale-0 hover:scale-105 transition-transform duration-300"
+                    className="object-cover w-full h-full filter  hover:scale-105 transition-transform duration-300"
                   />
                 </Link>
               </div>
@@ -81,7 +81,7 @@ export default function ProjectSection() {
                   <div
                     className={`absolute flex justify-center items-center -mt-20 lg:mt-0 lg:top-1/2 -translate-y-1/2 ${
                       index % 2 !== 0 ? "lg:left-0" : "right-0"
-                    } bg-background/80 h-24 lg:h-44 text-[#ccd6f6] border border-slate-200/10 overflow-hidden p-3 lg:p-5 text-sm shadow-md lg:w-[120%]`}
+                    } bg-background/80  backdrop-blur-sm h-24 lg:h-44 text-[#ccd6f6] border border-slate-200/10 overflow-hidden p-3 lg:p-5 text-sm shadow-md lg:w-[120%]`}
                   >
                     <div className="block sm:hidden">
                       {project.description.slice(0, 1)}
