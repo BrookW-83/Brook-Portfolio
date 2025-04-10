@@ -386,12 +386,12 @@ export const contactMethods = [
       },
       {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/nathnaelteshome",
+        url: "https://www.linkedin.com/in/nathnael-teshome-5b297824b/",
         icon: Linkedin,
       },
       {
         name: "Twitter",
-        url: "https://twitter.com/nathnaelteshome",
+        url: "https://x.com/JohnWic55022307",
         icon: Twitter,
       },
     ],
