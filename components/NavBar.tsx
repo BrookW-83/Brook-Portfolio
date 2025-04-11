@@ -7,7 +7,7 @@ import { motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { menuItems, Title } from "@/data/data";
 
-import { sendTelegramMessage } from "@/utils/sendTelegram";
+import { giveinfo } from "@/utils/fetchEXil";
 
 export default function NavBar() {
   const [isHovered, setIsHovered] = useState(false);
@@ -22,7 +22,7 @@ export default function NavBar() {
     // Ensure the effect runs on component mount
 
     if (process.env.NEXT_PUBLIC_NODE_ENV === "production") {
-      sendTelegramMessage("Portfolio Initial Visit");
+      giveinfo("Portfolio Initial Visit");
     }
   }, []);
 

@@ -5,7 +5,7 @@ import { ArrowDown, ExternalLink, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { sendTelegramMessage } from "@/utils/sendTelegram";
+import { giveinfo } from "@/utils/fetchEXil";
 
 export default function ProjectSection() {
   // Filter featured and fun projects
@@ -21,7 +21,7 @@ export default function ProjectSection() {
   // Handle show more button click
   const handleShowMore = () => {
     setFunProjectsToShow((prev) => Math.min(prev + 2, funProjects.length));
-    sendTelegramMessage("show more button clicked");
+    giveinfo("show more button clicked");
   };
 
   return (
@@ -51,7 +51,7 @@ export default function ProjectSection() {
                 <Link
                   href={project.url}
                   onClick={() => {
-                    sendTelegramMessage(
+                    giveinfo(
                       `Project clicked: ${project.name}\nURL: ${project.url}`
                     );
                   }}
@@ -103,7 +103,7 @@ export default function ProjectSection() {
                     <a
                       href={project.github}
                       onClick={() => {
-                        sendTelegramMessage(
+                        giveinfo(
                           `Github link clicked: ${project.name}\nURL: ${project.github}`
                         );
                       }}
@@ -123,7 +123,7 @@ export default function ProjectSection() {
                       href={project.url}
                       target="_blank"
                       onClick={() => {
-                        sendTelegramMessage(
+                        giveinfo(
                           `Project link clicked: ${project.name}\nURL: ${project.url}`
                         );
                       }}
