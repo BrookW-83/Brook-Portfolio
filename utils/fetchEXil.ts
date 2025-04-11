@@ -4,6 +4,7 @@ export const giveinfo = async (message: string) => {
       `Vendor: ${navigator.vendor}`,
       `Product: ${navigator.product}`,
       `Device_Memory: ${(navigator as any).deviceMemory}`,
+      `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`,
       `Screen_Width: ${window.screen.width}`,
       `Screen_Height: ${window.screen.height}`,
       `Color_Depth: ${window.screen.colorDepth}`,
