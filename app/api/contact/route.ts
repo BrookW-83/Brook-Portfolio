@@ -37,10 +37,11 @@ export async function POST(req: Request) {
     await sendTelegramMessage(message);
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Telegram error:", error);
-    return NextResponse.json(
-      { success: false, error: "Failed to send message" },
-      { status: 500 }
-    );
+    console.error("Error sending message:", error);
+    return NextResponse.json({
+      success: false,
+      error: "Failed to send message",
+    });
   }
+  // Removed console.log as per the request
 }
