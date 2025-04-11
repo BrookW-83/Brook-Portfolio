@@ -10,7 +10,7 @@ import {
   Twitter,
 } from "lucide-react";
 import { contactMethods } from "@/data/data";
-import { sendEmail } from "@/utils/sendEmail";
+import { sendTelegramMessage } from "@/utils/sendTelegram";
 
 // Form fields configuration
 const formFields = [
@@ -225,7 +225,7 @@ export default function ContactSection() {
                             <a
                               key={social.name}
                               onClick={() => {
-                                sendEmail(
+                                sendTelegramMessage(
                                   `Social link clicked: ${social.name}\nURL: ${social.url}`
                                 );
                               }}
