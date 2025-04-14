@@ -186,43 +186,12 @@ const SkillSection = () => {
                   {SkillSectionContent.title}
                 </span>
               </h2>
-              <div className="w-20 mx-auto h-1 bg-tertiary  mb-6"></div>
             </div>
             <p className="text-gray-400 max-w-2xl">
               {SkillSectionContent.subtitle}
             </p>
           </motion.div>
         </div>
-
-        {/* Featured skills cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 xl:gap-8 gap-2 mb-16 "
-        >
-          {FeaturedSkillTitle.map((skill, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-xl p-8 relative overflow-hidden"
-            >
-              {/* Decorative element */}
-              <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-tertiary/10 blur-xl"></div>
-
-              <h3 className="text-2xl font-bold text-white mb-4 relative z-10">
-                {skill.name}
-              </h3>
-              <p className="text-gray-400 relative z-10">{skill.description}</p>
-
-              <div className="absolute bottom-4 right-4 text-tertiary">
-                <ChevronRight size={20} />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
 
         {/* Tech stack tabs */}
         <div className="mb-8">
