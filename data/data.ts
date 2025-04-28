@@ -29,7 +29,7 @@ export const AboutSectionData = {
 // Updated TechStacks with more detailed information
 export const TechStacks = {
   frontEnd: ["TypeScript", "React", "Next.js", "VueJs", "NuxtJs"],
-  BackEnd: ["Node.js", "Express.js", ".NET", "C#", "NestJs", "Django", "Go"],
+  BackEnd: ["Node.js", "Express.js", ".NET", "C#", "NestJs", "Django", "Go", "Java"],
   Mobile: ["React Native"],
 };
 
@@ -186,6 +186,15 @@ export const Skills = [
     description:
       "Building server-rendered Vue applications with enhanced features.",
     category: "frontEnd",
+  },
+  {
+    id: 16,
+    name: "Java",
+    icon: "/images/skills/java.svg",
+    proficiency: 70,
+    description:
+      "Developing platform-independent applications with Java's robust ecosystem.",
+    category: "BackEnd",
   },
 ];
 
