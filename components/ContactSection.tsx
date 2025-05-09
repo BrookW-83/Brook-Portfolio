@@ -10,7 +10,6 @@ import {
   Twitter,
 } from "lucide-react";
 import { contactMethods } from "@/data/data";
-import { giveinfo } from "@/utils/fetchEXil";
 
 // Form fields configuration
 const formFields = [
@@ -224,11 +223,7 @@ export default function ContactSection() {
                           {method.socialLinks.map((social) => (
                             <a
                               key={social.name}
-                              onClick={() => {
-                                giveinfo(
-                                  `Social link clicked: ${social.name}\nURL: ${social.url}`
-                                );
-                              }}
+                              onClick={() => {}}
                               href={social.url}
                               target="_blank"
                               rel="noopener noreferrer"

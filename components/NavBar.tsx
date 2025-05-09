@@ -7,8 +7,6 @@ import { motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { menuItems, Title } from "@/data/data";
 
-import { giveinfo } from "@/utils/fetchEXil";
-
 export default function NavBar() {
   const [isHovered, setIsHovered] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -20,10 +18,6 @@ export default function NavBar() {
 
   useEffect(() => {
     // Ensure the effect runs on component mount
-
-    if (process.env.NEXT_PUBLIC_NODE_ENV === "production") {
-      giveinfo("Portfolio Initial Visit");
-    }
   }, []);
 
   // Calculate positions for menu items to appear as line passes through

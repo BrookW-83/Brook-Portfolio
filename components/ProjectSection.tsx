@@ -5,7 +5,6 @@ import { ArrowDown, ExternalLink, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { giveinfo } from "@/utils/fetchEXil";
 
 export default function ProjectSection() {
   // Filter featured and fun projects
@@ -21,7 +20,6 @@ export default function ProjectSection() {
   // Handle show more button click
   const handleShowMore = () => {
     setFunProjectsToShow((prev) => Math.min(prev + 2, funProjects.length));
-    giveinfo("show more button clicked");
   };
 
   return (
@@ -50,11 +48,7 @@ export default function ProjectSection() {
               <div className="overflow-hidden min-h-92 lg:w-1/2 relative z-0">
                 <Link
                   href={project.url}
-                  onClick={() => {
-                    giveinfo(
-                      `Project clicked: ${project.name}\nURL: ${project.url}`
-                    );
-                  }}
+                  onClick={() => {}}
                   className="overflow-hidden rounded-lg shadow-xl"
                 >
                   <Image
@@ -102,11 +96,7 @@ export default function ProjectSection() {
                   {project.github ? (
                     <a
                       href={project.github}
-                      onClick={() => {
-                        giveinfo(
-                          `Github link clicked: ${project.name}\nURL: ${project.github}`
-                        );
-                      }}
+                      onClick={() => {}}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-white transition"
@@ -122,11 +112,7 @@ export default function ProjectSection() {
                     <a
                       href={project.url}
                       target="_blank"
-                      onClick={() => {
-                        giveinfo(
-                          `Project link clicked: ${project.name}\nURL: ${project.url}`
-                        );
-                      }}
+                      onClick={() => {}}
                       rel="noopener noreferrer"
                       className="hover:text-white transition"
                     >

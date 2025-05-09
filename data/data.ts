@@ -1,14 +1,14 @@
 import { desc, section } from "framer-motion/client";
 import { Github, Linkedin, Mail, MessageSquare, Twitter } from "lucide-react";
 
-export const Title = "Nath.";
+export const Title = "Brook A.";
 
 export const HeroSectionData = {
   pTag: "Hi, My name is",
-  hTag: "Nathnael Teshome",
+  hTag: "I’m Brook Worku Alemu .",
   hTag2: "I make websites that go brr.",
   pTag2:
-    "I am a software engineer with a passion for building web applications. I have experience in JavaScript, React, and Node.js.I am currently working at a startup where I am responsible for building and maintaining the company's web applications. I am also involved in the design and development of new features.In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends. In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends.",
+    "I am a software engineer with a passion for building web applications. I have experience in JavaScript/TypeScript, React, Next.js and Node.js.I am currently working at a startup where I am responsible for building and maintaining the company's web applications. I am also involved in the design and development of new features.In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends. In my free time, I enjoy learning new technologies and working on personal projects. I am also an avid reader and enjoy spending time with my family and friends.",
   heroImage: "/images/hero.png",
   button: "Get In Touch",
 };
@@ -21,15 +21,15 @@ export const ProjectSectionData = {
 export const AboutSectionData = {
   sectionId: "02.",
   hTag: "Hi there!",
-  h1Tag: "I’m Nathnael, your go-to software engineer.",
+  h1Tag: "I’m Brook, your go-to software engineer.",
   pTag2:
-    "I’m a full-stack(backend-heavy) developer who loves making cool web applications, While I specialize in JavaScript and Python i have a knack for picking up new things, My main expertise lies in crafting robust server-side solutions that keep everything running smoothly. When I’m not in front of a screen, you can find me diving into a good book or reading about the latest trends in technology.",
+    "I’m a full-stack developer who loves making cool web applications, While I specialize in JavaScript and Python i have a knack for picking up new things, My main expertise lies in crafting robust server-side solutions that keep everything running smoothly. When I’m not in front of a screen, you can find me diving into a good book or reading about the latest trends in technology.",
   animatedImg: "/animatedcoder4.svg",
 };
 // Updated TechStacks with more detailed information
 export const TechStacks = {
   frontEnd: ["TypeScript", "React", "Next.js", "VueJs", "NuxtJs"],
-  BackEnd: ["Node.js", "Express.js", ".NET", "C#", "NestJs", "Django", "Go", "Java"],
+  BackEnd: ["Node.js", "Express.js", ".NET", "C#", "Go"],
   Mobile: ["React Native"],
 };
 
@@ -58,9 +58,9 @@ export const FeaturedSkillTitle = [
 export const Skills = [
   {
     id: 1,
-    name: "JavaScript",
+    name: "TypeScript",
     icon: "/images/skills/javascript.svg",
-    proficiency: 75,
+    proficiency: 90,
     description:
       "Building interactive and dynamic web applications with modern JavaScript.",
     category: "frontEnd",
@@ -87,7 +87,7 @@ export const Skills = [
     id: 4,
     name: "Next.js",
     icon: "/images/skills/nextjs.svg",
-    proficiency: 89,
+    proficiency: 100,
     description:
       "Building server-rendered React applications with optimized performance.",
     category: "frontEnd",
@@ -103,7 +103,7 @@ export const Skills = [
   },
   {
     id: 6,
-    name: "TypeScript",
+    name: "JavaScript",
     icon: "/images/skills/typescript.svg",
     proficiency: 87,
     description:
@@ -236,7 +236,7 @@ export const ExperienceData = [
     id: 2,
     title: "Full Stack Developer",
     company: "Ethiopian Space Science Society",
-    date: "Nov 2023 - Feb 2024",
+    date: "Nov 2023 - July 2024",
     bulletPoints: [
       "Developed an innovative learning platform that provides accessible space science education to a diverse audience.",
       "Created intuitive user interfaces with React, significantly enhancing user engagement based on feedback.",
@@ -248,25 +248,14 @@ export const ExperienceData = [
   {
     id: 3,
     title: "Software Engineer",
-    company: "Minnovation",
-    date: "Nov 2022 - Feb 2023",
+    company: "Eskalate",
+    date: "March 2023 - June 2023",
     bulletPoints: [
       "Collaborated with engineers, scientists, and product teams to develop and refine innovative solutions.",
       "Designed and optimized machine learning models, focusing on enhancing their accuracy, efficiency, and scalability.",
       "Contributed to cross-functional partnerships that advanced project goals effectively.",
     ],
-  },
-  {
-    id: 4,
-    title: "Design Engineering Intern",
-    company: "Ethiopian Airlines",
-    date: "Apr 2022 - Jul 2022",
-    bulletPoints: [
-      "Supported data collection and analysis for research projects aimed at improving airport operations, focusing on efficiency and safety enhancements.",
-      "Applied data visualization techniques to deliver actionable insights, contributing to improved operational efficiency and safety measures at Bole International Airport.",
-      "Collaborated with cross-functional teams to identify and implement improvements in material handling processes, optimizing workflow and resource utilization.",
-    ],
-  },
+  }
 ];
 
 export const menuItems = [
@@ -279,17 +268,17 @@ export const menuItems = [
 
 export const projects = [
   {
-    name: "rateeat",
+    name: "Akil",
     tag: "featured project",
     description: [
-      "Rateeat is a versatile web and mobile application that enables users to rate and review restaurants.",
-      "It features a sleek interface for searching restaurants by location, cuisine, and rating.",
-      "Users can create accounts to save their favorite restaurants and reviews, enhancing their culinary journey.",
+          "Akil is a platform that connects talent with opportunities and enables organizations to manage talent effectively.",
+          "It features a sleek interface that lists opportunities with search and filter options, supports applications, and allows users to browse organizations from the talent side.",
+          "For organizations, it offers tools to manage talent and applicants, including AI-reviewed resumes, the ability to post opportunities as public or private, maintain a talent pool, add multiple representatives, and invite talent to apply for their opportunities.",
     ],
-    imageurl: "/images/rateeat.png",
-    technologies: ["Node.js", "Next.js", "Flutter", "PostgreSQL"],
+    imageurl: "/images/akil.png",
+    technologies: ["Go", "Next.js", "Flutter", "MongoDb"],
     github: "",
-    url: "http://rateeat.app",
+    url: "https://akilconnect.org/en",
   },
 
   {
@@ -307,22 +296,7 @@ export const projects = [
   },
 
   {
-    name: "netflix clone",
-    tag: "fun project",
-    description: [
-      "This is a fun project I undertook to create a Netflix Clone!",
-      "Imagine having all your favorite movies and TV shows at your fingertips.",
-      "The application integrates with external APIs to provide updated content.",
-      "With a user-friendly interface, you can easily watch trailer for new shows and content without the need for account creation.",
-    ],
-    github: "https://github.com/nathnaelteshome/netflix_clone",
-    imageurl: "/images/netflix-clone.png",
-    technologies: ["Redux", "Vite", "React", "SCSS"],
-    url: "https://netflix-clone.vercel.app/",
-  },
-
-  {
-    name: "esss lp",
+    name: "ESSS Learning",
     tag: "featured project",
     description: [
       "The ESSS Learning Platform is an innovative educational tool designed for Ethiopian students to learn about space science.",
@@ -334,11 +308,11 @@ export const projects = [
       "Next.js",
       "Node.js",
       "Redux Toolkit",
-      "MongoDB",
+      "PostgreSQL",
       "OAuth 3.0",
     ],
     github: "https://github.com/esssweb/esss-learning-platform",
-    url: "http://esss-learning-platform.com",
+    url: "https://deployment-esss.vercel.app/",
   },
 
   {
@@ -375,11 +349,11 @@ export const contactMethods = [
   {
     id: "email",
     title: "Email",
-    value: "nathnaelteshome10@gmail.com",
+    value: "brookalemu83@gmail.com",
     icon: Mail,
     action: {
       text: "Send an email",
-      url: "mailto:nathnaelteshome10@gmail.com",
+      url: "mailto:brookalemu83@gmail.com",
     },
   },
   {
@@ -390,12 +364,12 @@ export const contactMethods = [
     socialLinks: [
       {
         name: "GitHub",
-        url: "https://github.com/nathnaelteshome",
+        url: "https://github.com/BrookW-83",
         icon: Github,
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/nathnael-teshome-5b297824b/",
+        url: "https://www.linkedin.com/in/brookworku83/",
         icon: Linkedin,
       },
       {
