@@ -272,8 +272,8 @@ export const projects = [
     tag: "featured project",
     description: [
           "Akil is a platform that connects talent with opportunities and enables organizations to manage talent effectively.",
-          "It features a sleek interface that lists opportunities with search and filter options, supports applications, and allows users to browse organizations from the talent side.",
-          "For organizations, it offers tools to manage talent and applicants, including AI-reviewed resumes, the ability to post opportunities as public or private, maintain a talent pool, add multiple representatives, and invite talent to apply for their opportunities.",
+          "It features a sleek interface that lists opportunities with search and filter options and allows users to browse organizations from the talent side.",
+          "For organizations, it offers tools to manage talent and applicants, including AI-reviewed resumes.",
     ],
     imageurl: "/images/akil.png",
     technologies: ["Go", "Next.js", "Flutter", "MongoDb"],
